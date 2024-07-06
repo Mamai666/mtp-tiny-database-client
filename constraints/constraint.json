@@ -1,0 +1,296 @@
+{
+    "In": {
+        "Type": "object",
+        "FormType": "Fieldset",
+        "ShowInWeb": true,
+        "LabelRu": "Входной канал",
+        "LabelEn": "Output channels",
+        "DescriptionRu": "Список входных каналов данных",
+        "DescriptionEn": "List of output data channels",
+        "Server": {
+            "Type": "object",
+            "FormType": "Fieldset",
+            "ShowInWeb": true,
+            "LabelRu": "Параметры брокера",
+            "LabelEn": "Broker parameters",
+            "DescriptionRu": "Параметры брокера для получения запросов и метаданных",
+            "DescriptionEn": "Broker parameters for handling requests and metadata",
+            "Credentials": {
+                "Default": "",
+                "Type": "string",
+                "FormType": "Text",
+                "ShowInWeb": false,
+                "LabelRu": "Учетные данные",
+                "LabelEn": "Credentials",
+                "DescriptionRu": "Учетные данные брокера",
+                "DescriptionEn": "Broker credentials"
+            },
+            "Role": {
+                "Enum": [
+                    "Server"
+                ],
+                "Default": "Server",
+                "Type": "string",
+                "FormType": "Select",
+                "ShowInWeb": false,
+                "LabelRu": "Название роли",
+                "LabelEn": "Role name",
+                "DescriptionRu": "Название роли, используемого брокера",
+                "DescriptionEn": "Name of the role used by the broker"
+            },
+            "Partner": {
+                "Default": "Multi",
+                "Type": "string",
+                "FormType": "Text",
+                "ShowInWeb": false,
+                "LabelRu": "Соединенный модуль",
+                "LabelEn": "Connecting module",
+                "DescriptionRu": "Указывает модуль, с которым устанавливается соединение. Значение 'Multi' по умолчанию означает возможность подключения к нескольким модулям",
+                "DescriptionEn": "Specifies the module to which a connection is established. The 'Multi' default indicates the capability to connect to multiple modules"
+            },
+            "MaxLenQueueSend": {
+                "Default": 5,
+                "Type": "int",
+                "FormType": "Text",
+                "ShowInWeb": true,
+                "LabelRu": "Максимальный размер буфера для отправки",
+                "LabelEn": "MMaximum buffer size to send",
+                "DescriptionRu": "Максимальный размер буфера для отправки сообщений",
+                "DescriptionEn": "Maximum buffer size for sending messages",
+                "Max": 1000,
+                "Min": 0
+            },
+            "MaxLenQueueRecv": {
+                "Default": 5,
+                "Type": "int",
+                "FormType": "Text",
+                "ShowInWeb": true,
+                "LabelRu": "Максимальный размер буфера для получения",
+                "LabelEn": "Maximum buffer size to receive",
+                "DescriptionRu": "Максимальный размер буфера для получения сообщений",
+                "DescriptionEn": "Maximum buffer size for receiving messages",
+                "Max": 1000,
+                "Min": 0
+            },
+            "KeepConnect": {
+                "Default": true,
+                "Type": "bool",
+                "FormType": "Checkbox",
+                "ShowInWeb": true,
+                "LabelRu": "Поддерживать соединение",
+                "LabelEn": "Maintain connection",
+                "DescriptionRu": "Поддерживать соединение (если нужно) или отключаться после отправки",
+                "DescriptionEn": "Maintain connection (if needed) or disconnect after sending"
+            },
+            "MaxSizeMessage": {
+                "Default": 20000,
+                "Type": "int",
+                "FormType": "Text",
+                "ShowInWeb": true,
+                "LabelRu": "Максимальный размер сообщения",
+                "LabelEn": "Maximum message size",
+                "DescriptionRu": "Максимальный размер сообщения в Кб",
+                "DescriptionEn": "Maximum message size in Kb",
+                "Max": 20000,
+                "Min": 1
+            }
+        }
+    },
+    "DB": {
+        "Type": "object",
+        "FormType": "Fieldset",
+        "ShowInWeb": true,
+        "LabelRu": "Настройки базы данных",
+        "LabelEn": "Database settings",
+        "DescriptionRu": "Параметры подключения к базе данных",
+        "DescriptionEn": "Database connection parameters",
+        "Host": {
+            "Default": "127.0.0.1",
+            "Type": "string",
+            "FormType": "Text",
+            "ShowInWeb": true,
+            "LabelRu": "Хост",
+            "LabelEn": "Host",
+            "DescriptionRu": "Адрес хоста, где развернута СУБД",
+            "DescriptionEn": "Host address where the DBMS is deployed"
+        },
+        "Name": {
+            "Default": "/opt/lms/file.db",
+            "Type": "string",
+            "FormType": "Text",
+            "ShowInWeb": true,
+            "LabelRu": "Имя базы данных",
+            "LabelEn": "Database name",
+            "DescriptionRu": "Имя базы данных, с которой работаем в данный момент (имя системы)",
+            "DescriptionEn": "Name of the current database (system name)"
+        },
+        "UserName": {
+            "Default": "",
+            "Type": "string",
+            "FormType": "Text",
+            "ShowInWeb": true,
+            "LabelRu": "Пользователь",
+            "LabelEn": "Username",
+            "DescriptionRu": "Логин для доступа к базе данных",
+            "DescriptionEn": "Login for access to the current database"
+        },
+        "Password": {
+            "Default": "",
+            "Type": "string",
+            "FormType": "Text",
+            "ShowInWeb": true,
+            "LabelRu": "Пароль",
+            "LabelEn": "Password",
+            "DescriptionRu": "Пароль для доступа к базе данных",
+            "DescriptionEn": "Password for access to the current database"
+        },
+        "Port": {
+            "Default": 5432,
+            "Type": "int",
+            "FormType": "Text",
+            "ShowInWeb": true,
+            "LabelRu": "Порт",
+            "LabelEn": "Port",
+            "DescriptionRu": "Порт базы данных, с которой работаем в данный момент",
+            "DescriptionEn": "Port of the current database",
+            "Min": 5000,
+            "Max": 6000
+        }
+    },
+    "Dispatcher": {
+        "Type": "object",
+        "FormType": "Fieldset",
+        "ShowInWeb": true,
+        "LabelRu": "Параметры для диспетчера (монитор)",
+        "LabelEn": "Parameters for the dispatcher (monitor)",
+        "DescriptionRu": "Параметры для диспетчера (монитор)",
+        "DescriptionEn": "Parameters for the dispatcher (monitor)",
+        "Consumer": {
+            "Enum": [
+                "Systemd",
+                "Monitor",
+                "None"
+            ],
+            "Default": "Monitor",
+            "Type": "string",
+            "FormType": "Select",
+            "ShowInWeb": true,
+            "LabelRu": "Система мониторинга",
+            "LabelEn": "Monitoring system",
+            "DescriptionRu": "Выбор системы мониторинга",
+            "DescriptionEn": "Choose monitoring system"
+        },
+        "TimeWaitConnect": {
+            "Type": "float",
+            "FormType": "Text",
+            "ShowInWeb": true,
+            "Default": 1000,
+            "LabelRu": "Время ожидания",
+            "LabelEn": "Maximum connection waiting time",
+            "DescriptionRu": "Максимальное время ожидания подключения к Monitor",
+            "DescriptionEn": "Maximum connection waiting time",
+            "Max": 5000,
+            "Min": 1
+        },
+        "DelaySendMessage": {
+            "Type": "float",
+            "FormType": "Text",
+            "ShowInWeb": true,
+            "Default": 1500,
+            "LabelRu": "Период отправки",
+            "LabelEn": "Time between sending messages",
+            "DescriptionRu": "Время между отправками сообщений KeepAlive",
+            "DescriptionEn": "Time between sending messages KeepAlive",
+            "Max": 2000,
+            "Min": 1
+        },
+        "Broker": {
+            "Type": "object",
+            "FormType": "Fieldset",
+            "ShowInWeb": true,
+            "LabelRu": "Параметры брокера",
+            "LabelEn": "Broker parameters",
+            "DescriptionRu": "Параметры брокера для подключения к модулю монитору",
+            "DescriptionEn": "Broker parameters for connecting to the monitor module",
+            "Credentials": {
+                "Default": "",
+                "Type": "string",
+                "FormType": "Text",
+                "ShowInWeb": false,
+                "LabelRu": "Учетные данные",
+                "LabelEn": "Credentials",
+                "DescriptionRu": "Учетные данные брокера",
+                "DescriptionEn": "Broker credentials"
+            },
+            "Role": {
+                "Enum": [
+                    "Client"
+                ],
+                "Default": "Client",
+                "Type": "string",
+                "FormType": "Select",
+                "ShowInWeb": false,
+                "LabelRu": "Выбор роли",
+                "LabelEn": "Role name",
+                "DescriptionRu": "Выбор роли, используемого брокера",
+                "DescriptionEn": "Name of the role used by the broker"
+            },
+            "Partner": {
+                "Default": "Multi",
+                "Type": "string",
+                "FormType": "Text",
+                "ShowInWeb": false,
+                "LabelRu": "Соединенный модуль",
+                "LabelEn": "Connecting Module",
+                "DescriptionRu": "Указывает модуль, с которым устанавливается соединение. Значение 'Multi' по умолчанию означает возможность подключения к нескольким модулям",
+                "DescriptionEn": "Specifies the module to which a connection is established. The 'Multi' default indicates the capability to connect to multiple modules"
+            },
+            "MaxLenQueueSend": {
+                "Default": 5,
+                "Type": "int",
+                "FormType": "Text",
+                "ShowInWeb": true,
+                "LabelRu": "Максимальный размер буфера для отправки",
+                "LabelEn": "Maximum buffer size to send",
+                "DescriptionRu": "Максимальный размер буфера для отправки сообщений",
+                "DescriptionEn": "Maximum buffer size for sending messages",
+                "Max": 1000,
+                "Min": 0
+            },
+            "MaxLenQueueRecv": {
+                "Default": 5,
+                "Type": "int",
+                "FormType": "Text",
+                "ShowInWeb": true,
+                "LabelRu": "Максимальный размер буфера для получения",
+                "LabelEn": "Maximum buffer size to receive",
+                "DescriptionRu": "Максимальный размер буфера для получения сообщений",
+                "DescriptionEn": "Maximum buffer size for receiving messages",
+                "Max": 1000,
+                "Min": 0
+            },
+            "KeepConnect": {
+                "Default": true,
+                "Type": "bool",
+                "FormType": "Checkbox",
+                "ShowInWeb": true,
+                "LabelRu": "Поддерживать соединение",
+                "LabelEn": "Maintain connection",
+                "DescriptionRu": "Поддерживать соединение (если нужно) или отключаться после отправки",
+                "DescriptionEn": "Maintain connection (if needed) or disconnect after sending"
+            },
+            "MaxSizeMessage": {
+                "Default": 20000,
+                "Type": "int",
+                "FormType": "Text",
+                "ShowInWeb": true,
+                "LabelRu": "Максимальный размер сообщения",
+                "LabelEn": "Maximum message size",
+                "DescriptionRu": "Максимальный размер сообщения в Кб",
+                "DescriptionEn": "Maximum message size in Kb",
+                "Max": 20000,
+                "Min": 1
+            }
+        }
+    }
+}

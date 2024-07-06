@@ -1,0 +1,34 @@
+{
+    "DB": {
+        "Host": "127.0.0.1",
+        "Name": "/opt/lms/mtp-tiny-database-client/database/main.db",
+        "Password": "",
+        "Port": 5432,
+        "UserName": ""
+    },
+    "In": {
+        "Server": {
+            "Credentials": "ws://127.0.0.1:8182",
+            "Role": "Server",
+            "Partner": "multi",
+            "MaxLenQueueSend": 15,
+            "MaxLenQueueRecv": 15,
+            "KeepConnect": true,
+            "MaxSizeMessage": 20000
+        }
+    },
+    "Dispatcher": {
+        "TimeWaitConnect": 1000,
+        "DelaySendMessage": 1500,
+	    "Consumer": "None",
+        "Broker": {
+            "Partner": "",
+            "Role": "Client",
+            "Credentials": "rmq://mtp:mtp@localhost:5672/",
+            "MaxLenQueueSend": 10,
+            "MaxLenQueueRecv": 10,
+            "KeepConnect": true,
+            "MaxSizeMessage": 20000
+        }
+    }
+}
